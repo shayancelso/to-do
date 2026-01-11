@@ -10,7 +10,7 @@
 
 ## Medium Priority
 
-*None*
+- [ ] **Clean up cat litter** `#home`
 
 ## Low Priority
 

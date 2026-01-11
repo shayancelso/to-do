@@ -11,11 +11,21 @@
       "createdAt": "2026-01-11T16:30:00Z",
       "completedAt": null,
       "tags": ["test"]
+    },
+    {
+      "id": "task_002",
+      "text": "Clean up cat litter",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": null,
+      "createdAt": "2026-01-11T16:30:00Z",
+      "completedAt": null,
+      "tags": ["home"]
     }
   ],
   "metadata": {
-    "totalTasks": 1,
-    "pendingCount": 1,
+    "totalTasks": 2,
+    "pendingCount": 2,
     "completedCount": 0
   }
 }
