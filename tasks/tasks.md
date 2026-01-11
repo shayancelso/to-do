@@ -1,27 +1,28 @@
 # To-Do List
 
-*Last updated: Jan 11, 2026 5:30 PM*
+*Last updated: Jan 11, 2026 6:00 PM*
 
 ---
 
 ## High Priority
 
-- [ ] **Test task** `#test` - Due: Jan 12
+*No pending tasks*
 
 ## Medium Priority
 
-- [ ] **Clean up cat litter** `#home`
-- [ ] **Test n8n Slack integration** `#test`
-- [ ] **Go to the gym and hit upper body** `#health`
-- [ ] **Sell clothes to Plato's Closet** `#personal`
-- [ ] **Buy milk** `#shopping`
+*No pending tasks*
 
 ## Low Priority
 
-*None*
+*No pending tasks*
 
 ---
 
 ## Completed
 
-*None yet*
+- [x] ~~Test task~~ `#test` - Completed: Jan 11
+- [x] ~~Clean up cat litter~~ `#home` - Completed: Jan 11
+- [x] ~~Test n8n Slack integration~~ `#test` - Completed: Jan 11
+- [x] ~~Go to the gym and hit upper body~~ `#health` - Completed: Jan 11
+- [x] ~~Sell clothes to Plato's Closet~~ `#personal` - Completed: Jan 11
+- [x] ~~Buy milk~~ `#shopping` - Completed: Jan 11

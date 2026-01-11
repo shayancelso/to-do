@@ -1,71 +1,71 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-11T17:30:00Z",
+  "lastUpdated": "2026-01-11T18:00:00Z",
   "tasks": [
     {
       "id": "task_001",
       "text": "Test task",
-      "status": "pending",
+      "status": "completed",
       "priority": "high",
       "dueDate": "2026-01-12",
       "createdAt": "2026-01-11T16:30:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["test"]
     },
     {
       "id": "task_002",
       "text": "Clean up cat litter",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "dueDate": null,
       "createdAt": "2026-01-11T16:30:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["home"]
     },
     {
       "id": "task_003",
       "text": "Test n8n Slack integration",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "dueDate": null,
       "createdAt": "2026-01-11T17:00:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["test"]
     },
     {
       "id": "task_004",
       "text": "Go to the gym and hit upper body",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "dueDate": null,
       "createdAt": "2026-01-11T17:15:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["health"]
     },
     {
       "id": "task_005",
       "text": "Sell clothes to Plato's Closet",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "dueDate": null,
       "createdAt": "2026-01-11T17:20:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["personal"]
     },
     {
       "id": "task_006",
       "text": "Buy milk",
-      "status": "pending",
+      "status": "completed",
       "priority": "medium",
       "dueDate": null,
       "createdAt": "2026-01-11T17:30:00Z",
-      "completedAt": null,
+      "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["shopping"]
     }
   ],
   "metadata": {
     "totalTasks": 6,
-    "pendingCount": 6,
-    "completedCount": 0
+    "pendingCount": 0,
+    "completedCount": 6
   }
 }
