@@ -25,26 +25,53 @@ When adding a task, parse the input to extract:
 3. **Priority**: `priority:X` or `p:X` where X is high/medium/low (or h/m/l)
 4. **Tags**: Auto-detected OR explicit `#tag`
 
-## Auto-Tagging (AI-Powered)
+## Job Categories (Primary Tags)
 
-If the user doesn't provide explicit tags, automatically detect appropriate tags based on task content:
+The user has three jobs. These are the PRIMARY categorization tags:
 
-| Keywords/Patterns | Auto-Tag |
-|-------------------|----------|
-| groceries, milk, eggs, bread, shopping list, buy food | `#shopping` |
-| meeting, call, email, slack, presentation, report | `#work` |
-| PR, code, bug, feature, deploy, merge, review | `#code` |
-| clean, organize, fix, repair, garage, house | `#home` |
-| doctor, dentist, gym, workout, health, appointment | `#health` |
-| pay, bill, invoice, expense, budget, finance | `#finance` |
-| read, learn, course, study, book | `#learning` |
-| call mom, birthday, family, friend, dinner with | `#personal` |
+| Job | Tag | Location | Description |
+|-----|-----|----------|-------------|
+| **VENA** | `#vena` | Canada | Account management - actioning things for accounts |
+| **LATTICE** | `#lattice` | Dubai | Sales - prospecting and closing deals |
+| **GLOO** | `#gloo` | Startup | Vibe coding, building the startup |
 
-**Rules:**
-- If explicit `#tag` is provided, use those instead of auto-detecting
-- Can assign multiple auto-tags if content matches multiple categories
-- If no match found, don't add any tags (leave empty)
-- Always show the user what tags were auto-assigned in the confirmation
+### When to Ask for Clarification
+
+**ASK the user** which job a task is for if:
+- The task seems work-related (meetings, calls, emails, reviews, follow-ups, etc.)
+- No explicit job tag (`#vena`, `#lattice`, `#gloo`) was provided
+- The task doesn't clearly fall into a personal/non-work category
+
+**Example interaction:**
+```
+User: /do follow up with Sarah about the contract
+Claude: Which job is this for?
+- VENA (account management)
+- LATTICE (sales)
+- GLOO (startup)
+User: vena
+Claude: Added: "Follow up with Sarah about the contract" #vena
+```
+
+### Auto-Categorize WITHOUT Asking
+
+Only auto-tag silently for clearly NON-WORK tasks:
+
+| Keywords/Patterns | Auto-Tag | Ask? |
+|-------------------|----------|------|
+| groceries, milk, shopping, buy food | `#shopping` | No |
+| clean, organize, garage, house, laundry | `#home` | No |
+| doctor, dentist, gym, workout, health | `#health` | No |
+| pay bills, invoice, expense, budget | `#finance` | No |
+| call mom, birthday, family, friend, dinner | `#personal` | No |
+
+### Rules
+
+1. **Explicit tag always wins**: If user says `#vena`, use it - don't ask
+2. **Work-related = ask**: Meetings, calls, emails, reviews, follow-ups, proposals, demos → ASK which job
+3. **Personal = auto-tag**: Shopping, health, home, family → auto-tag silently
+4. **Ambiguous = ask**: When in doubt, ask
+5. **Keep it quick**: One question max, then proceed
 
 ### Date Patterns
 - `tomorrow` → next day
