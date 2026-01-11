@@ -1,6 +1,6 @@
 # To-Do List
 
-*Last updated: Jan 11, 2026 5:00 PM*
+*Last updated: Jan 11, 2026 5:15 PM*
 
 ---
 
@@ -12,6 +12,7 @@
 
 - [ ] **Clean up cat litter** `#home`
 - [ ] **Test n8n Slack integration** `#test`
+- [ ] **Go to the gym and hit upper body** `#health`
 
 ## Low Priority
 

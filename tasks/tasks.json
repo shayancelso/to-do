@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-11T17:00:00Z",
+  "lastUpdated": "2026-01-11T17:15:00Z",
   "tasks": [
     {
       "id": "task_001",
@@ -31,11 +31,21 @@
       "createdAt": "2026-01-11T17:00:00Z",
       "completedAt": null,
       "tags": ["test"]
+    },
+    {
+      "id": "task_004",
+      "text": "Go to the gym and hit upper body",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": null,
+      "createdAt": "2026-01-11T17:15:00Z",
+      "completedAt": null,
+      "tags": ["health"]
     }
   ],
   "metadata": {
-    "totalTasks": 3,
-    "pendingCount": 3,
+    "totalTasks": 4,
+    "pendingCount": 4,
     "completedCount": 0
   }
 }
