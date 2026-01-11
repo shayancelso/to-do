@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-11T16:30:00Z",
+  "lastUpdated": "2026-01-11T17:00:00Z",
   "tasks": [
     {
       "id": "task_001",
@@ -21,11 +21,21 @@
       "createdAt": "2026-01-11T16:30:00Z",
       "completedAt": null,
       "tags": ["home"]
+    },
+    {
+      "id": "task_003",
+      "text": "Zip up all the bags for sale",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": null,
+      "createdAt": "2026-01-11T17:00:00Z",
+      "completedAt": null,
+      "tags": ["personal"]
     }
   ],
   "metadata": {
-    "totalTasks": 2,
-    "pendingCount": 2,
+    "totalTasks": 3,
+    "pendingCount": 3,
     "completedCount": 0
   }
 }
