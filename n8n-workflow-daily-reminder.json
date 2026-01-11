@@ -1,0 +1,104 @@
+{
+  "name": "To-Do Daily Reminder",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily at 8am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/shayancelso/to-do/main/tasks/tasks.json",
+        "options": {}
+      },
+      "id": "fetch-tasks",
+      "name": "Fetch Tasks from GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get tasks from the HTTP response\nconst data = $input.first().json;\nconst tasks = data.tasks || [];\n\n// Get today and tomorrow dates\nconst today = new Date();\nconst tomorrow = new Date(today);\ntomorrow.setDate(tomorrow.getDate() + 1);\n\nconst formatDate = (d) => d.toISOString().split('T')[0];\nconst todayStr = formatDate(today);\nconst tomorrowStr = formatDate(tomorrow);\n\n// Filter pending tasks due today or tomorrow\nconst urgentTasks = tasks.filter(task => {\n  if (task.status !== 'pending') return false;\n  if (!task.dueDate) return false;\n  return task.dueDate === todayStr || task.dueDate === tomorrowStr;\n});\n\n// Also get overdue tasks\nconst overdueTasks = tasks.filter(task => {\n  if (task.status !== 'pending') return false;\n  if (!task.dueDate) return false;\n  return task.dueDate < todayStr;\n});\n\n// Format message\nlet message = '';\n\nif (overdueTasks.length > 0) {\n  message += '*Overdue Tasks:*\\n';\n  overdueTasks.forEach(t => {\n    const tags = t.tags?.length ? ` \\`${t.tags.map(tag => '#' + tag).join(' ')}\\`` : '';\n    message += `- ${t.text}${tags} (was due: ${t.dueDate})\\n`;\n  });\n  message += '\\n';\n}\n\nconst todayTasks = urgentTasks.filter(t => t.dueDate === todayStr);\nconst tomorrowTasks = urgentTasks.filter(t => t.dueDate === tomorrowStr);\n\nif (todayTasks.length > 0) {\n  message += '*Due Today:*\\n';\n  todayTasks.forEach(t => {\n    const tags = t.tags?.length ? ` \\`${t.tags.map(tag => '#' + tag).join(' ')}\\`` : '';\n    const priority = t.priority === 'high' ? ' :fire:' : '';\n    message += `- ${t.text}${tags}${priority}\\n`;\n  });\n  message += '\\n';\n}\n\nif (tomorrowTasks.length > 0) {\n  message += '*Due Tomorrow:*\\n';\n  tomorrowTasks.forEach(t => {\n    const tags = t.tags?.length ? ` \\`${t.tags.map(tag => '#' + tag).join(' ')}\\`` : '';\n    message += `- ${t.text}${tags}\\n`;\n  });\n}\n\nconst totalUrgent = overdueTasks.length + urgentTasks.length;\n\nif (totalUrgent === 0) {\n  message = 'No urgent tasks! You\\'re all caught up.';\n}\n\nreturn [{\n  json: {\n    message: message,\n    taskCount: totalUrgent,\n    hasUrgentTasks: totalUrgent > 0\n  }\n}];"
+      },
+      "id": "filter-tasks",
+      "name": "Filter Due Tasks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "",
+          "mode": "id"
+        },
+        "text": "={{ $json.message }}",
+        "otherOptions": {}
+      },
+      "id": "send-slack",
+      "name": "Send Slack Message",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [660, 0],
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "",
+          "name": ""
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily at 8am": {
+      "main": [
+        [
+          {
+            "node": "Fetch Tasks from GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Tasks from GitHub": {
+      "main": [
+        [
+          {
+            "node": "Filter Due Tasks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Due Tasks": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

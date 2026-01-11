@@ -23,7 +23,28 @@ When adding a task, parse the input to extract:
 1. **Task text**: Everything that isn't a modifier
 2. **Due date**: Natural language dates
 3. **Priority**: `priority:X` or `p:X` where X is high/medium/low (or h/m/l)
-4. **Tags**: Words starting with `#`
+4. **Tags**: Auto-detected OR explicit `#tag`
+
+## Auto-Tagging (AI-Powered)
+
+If the user doesn't provide explicit tags, automatically detect appropriate tags based on task content:
+
+| Keywords/Patterns | Auto-Tag |
+|-------------------|----------|
+| groceries, milk, eggs, bread, shopping list, buy food | `#shopping` |
+| meeting, call, email, slack, presentation, report | `#work` |
+| PR, code, bug, feature, deploy, merge, review | `#code` |
+| clean, organize, fix, repair, garage, house | `#home` |
+| doctor, dentist, gym, workout, health, appointment | `#health` |
+| pay, bill, invoice, expense, budget, finance | `#finance` |
+| read, learn, course, study, book | `#learning` |
+| call mom, birthday, family, friend, dinner with | `#personal` |
+
+**Rules:**
+- If explicit `#tag` is provided, use those instead of auto-detecting
+- Can assign multiple auto-tags if content matches multiple categories
+- If no match found, don't add any tags (leave empty)
+- Always show the user what tags were auto-assigned in the confirmation
 
 ### Date Patterns
 - `tomorrow` → next day
