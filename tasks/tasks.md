@@ -1,12 +1,12 @@
 # To-Do List
 
-*No tasks yet. Add one with `/do your task here`*
+*Last updated: Jan 11, 2026 4:30 PM*
 
 ---
 
 ## High Priority
 
-*None*
+- [ ] **Test task** `#test` - Due: Jan 12
 
 ## Medium Priority
 

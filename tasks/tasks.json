@@ -1,10 +1,21 @@
 {
   "version": "1.0",
-  "lastUpdated": null,
-  "tasks": [],
+  "lastUpdated": "2026-01-11T16:30:00Z",
+  "tasks": [
+    {
+      "id": "task_001",
+      "text": "Test task",
+      "status": "pending",
+      "priority": "high",
+      "dueDate": "2026-01-12",
+      "createdAt": "2026-01-11T16:30:00Z",
+      "completedAt": null,
+      "tags": ["test"]
+    }
+  ],
   "metadata": {
-    "totalTasks": 0,
-    "pendingCount": 0,
+    "totalTasks": 1,
+    "pendingCount": 1,
     "completedCount": 0
   }
 }
