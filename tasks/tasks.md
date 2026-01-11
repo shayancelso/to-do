@@ -1,6 +1,6 @@
 # To-Do List
 
-*Last updated: Jan 11, 2026 4:30 PM*
+*Last updated: Jan 11, 2026 5:00 PM*
 
 ---
 
@@ -11,6 +11,7 @@
 ## Medium Priority
 
 - [ ] **Clean up cat litter** `#home`
+- [ ] **Test n8n Slack integration** `#test`
 
 ## Low Priority
 
