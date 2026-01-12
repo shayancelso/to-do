@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-11T18:00:00Z",
+  "lastUpdated": "2026-01-12T10:00:00Z",
   "tasks": [
     {
       "id": "task_001",
@@ -61,11 +61,21 @@
       "createdAt": "2026-01-11T17:30:00Z",
       "completedAt": "2026-01-11T18:00:00Z",
       "tags": ["shopping"]
+    },
+    {
+      "id": "task_007",
+      "text": "Drain all the bathtubs",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": null,
+      "createdAt": "2026-01-12T10:00:00Z",
+      "completedAt": null,
+      "tags": ["home"]
     }
   ],
   "metadata": {
-    "totalTasks": 6,
-    "pendingCount": 0,
+    "totalTasks": 7,
+    "pendingCount": 1,
     "completedCount": 6
   }
 }

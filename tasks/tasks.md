@@ -1,6 +1,6 @@
 # To-Do List
 
-*Last updated: Jan 11, 2026 6:00 PM*
+*Last updated: Jan 12, 2026 10:00 AM*
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## Medium Priority
 
-*No pending tasks*
+- [ ] **Drain all the bathtubs** `#home`
 
 ## Low Priority
 
