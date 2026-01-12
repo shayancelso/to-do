@@ -71,11 +71,21 @@
       "createdAt": "2026-01-11T17:35:00Z",
       "completedAt": null,
       "tags": ["vena"]
+    },
+    {
+      "id": "task_008",
+      "text": "Drain all the sinks and bathtubs",
+      "status": "pending",
+      "priority": "medium",
+      "dueDate": "2026-01-15",
+      "createdAt": "2026-01-11T18:50:00Z",
+      "completedAt": null,
+      "tags": ["dubaimove"]
     }
   ],
   "metadata": {
-    "totalTasks": 7,
-    "pendingCount": 1,
+    "totalTasks": 8,
+    "pendingCount": 2,
     "completedCount": 6
   }
 }

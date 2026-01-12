@@ -1,6 +1,6 @@
 # To-Do List
 
-*Last updated: Jan 11, 2026 6:45 PM*
+*Last updated: Jan 11, 2026 6:50 PM*
 
 ---
 
@@ -11,6 +11,7 @@
 ## Medium Priority
 
 - [ ] **Respond to Integra testing about Copilot** `#vena`
+- [ ] **Drain all the sinks and bathtubs** `#dubaimove` - Due: Jan 15
 
 ## Low Priority
 
